@@ -138,8 +138,8 @@
                 <div class="col-lg-5">
                     <div class="d-flex flex-column align-items-center justify-content-center bg-secondary h-100 py-5 px-3">
                         <i class="fa fa-5x fa-certificate text-white mb-5"></i>
-                        <h1 class="display-1 text-white mb-3">{{ $betterExperience->number }}</h1>
-                        <h1 class="text-white m-0">{{ $betterExperience->wording }}</h1>
+                        <h1 class="display-1 text-white mb-3">{{ $betterExperience->number ?? '' }}</h1>
+                        <h1 class="text-white m-0">{{ $betterExperience->wording ?? '' }}</h1>
                     </div>
                 </div>
             </div>
