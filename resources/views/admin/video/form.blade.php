@@ -41,7 +41,7 @@
                                         <label for="title_fr">Titre (Français)</label>
                                         <input type="text" name="title_fr" id="title_fr" value="{{ $video->getTranslation("title", "fr") }}">
                                         @if ($errors->has('title_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('title_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -50,7 +50,7 @@
                                         <label for="title_en">Titre (Anglais)</label>
                                         <input type="text" name="title_en" id="title_en" value="{{ $video->getTranslation("title", "en") }}">
                                         @if ($errors->has('title_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('title_en') }}</strong>
                                                     </span>
                                         @endif

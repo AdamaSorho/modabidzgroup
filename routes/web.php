@@ -24,6 +24,10 @@ Route::group(["prefix" => "/news"], function () {
     Route::get('/detail/{id}', [\App\Http\Controllers\HomeController::class, "detail_news"])->name("news.detail");
 });
 
+Route::group(["prefix" => "/residence"], function () {
+    Route::get("/", [\App\Http\Controllers\ResidenceController::class, "index"])->name("residence.home");
+});
+
 Route::group(["prefix" => "/blog"], function () {
     Route::get('/', [\App\Http\Controllers\HomeController::class, "blog"])->name("blog");
     Route::get('/detail/{id}', [\App\Http\Controllers\HomeController::class, "detail_blog"])->name("blog.detail");

@@ -40,7 +40,7 @@
                                         <label for="slogan_fr">Slogan (Français)</label>
                                         <input type="text" name="slogan_fr" id="slogan_fr" value="{{ $setting->getTranslation("slogan", "fr") }}">
                                         @if ($errors->has('slogan_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('slogan_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -49,7 +49,7 @@
                                         <label for="slogan_en">Slogan (Anglais)</label>
                                         <input type="text" name="slogan_en" id="slogan_en" value="{{ $setting->getTranslation("slogan", "en") }}">
                                         @if ($errors->has('slogan_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('slogan_en') }}</strong>
                                                     </span>
                                         @endif
@@ -58,7 +58,7 @@
                                         <label for="sub_slogan_fr">Sous-titre (Français)</label>
                                         <input type="text" name="sub_slogan_fr" id="sub_slogan_fr" value="{{ $setting->getTranslation("sub_slogan", "fr") }}">
                                         @if ($errors->has('sub_slogan_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('sub_slogan_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -67,7 +67,7 @@
                                         <label for="sub_slogan_en">Sous-titre (Anglais)</label>
                                         <input type="text" name="sub_slogan_en" id="sub_slogan_en" value="{{ $setting->getTranslation("sub_slogan", "en") }}">
                                         @if ($errors->has('sub_slogan_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('sub_slogan_en') }}</strong>
                                                     </span>
                                         @endif
@@ -78,7 +78,7 @@
                                             {{ $setting->getTranslation("about_us", "fr") }}
                                         </textarea>
                                          @if ($errors->has('about_us_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('about_us_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -89,7 +89,7 @@
                                             {{ $setting->getTranslation("about_us", "en") }}
                                         </textarea>
                                          @if ($errors->has('about_us_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('about_us_en') }}</strong>
                                                     </span>
                                         @endif
@@ -100,7 +100,7 @@
                                             {{ $setting->getTranslation("choose_us", "fr") }}
                                         </textarea>
                                          @if ($errors->has('choose_us_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('choose_us_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -111,7 +111,7 @@
                                             {{ $setting->getTranslation("choose_us", "en") }}
                                         </textarea>
                                          @if ($errors->has('choose_us_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('choose_us_en') }}</strong>
                                                     </span>
                                         @endif
@@ -121,7 +121,7 @@
                                         <label class="fb-input" for="facebook"><i class="fa fa-facebook-square"></i> Facebook </label>
                                         <input type="text" name="facebook" id="facebook" placeholder="https://www.facebook.com/" value="{{ $setting->facebook }}">
                                         @if ($errors->has('facebook'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('facebook') }}</strong>
                                                     </span>
                                         @endif
@@ -131,7 +131,7 @@
                                         <label class="twitter-input" for="twitter"><i class="fa fa-twitter"></i> Twitter </label>
                                         <input type="text" name="twitter" id="twitter" value="{{ $setting->twitter }}" placeholder="https://www.twitter.com/">
                                         @if ($errors->has('twitter'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('twitter') }}</strong>
                                                     </span>
                                         @endif
@@ -140,7 +140,7 @@
                                         <label for="linkedin"><i class="fa fa-linkedin"></i> LinkedIn</label>
                                         <input type="text" name="linkedin" value="{{ $setting->linkedin }}" id="linkedin" placeholder="https://www.linkedin.com/">
                                         @if ($errors->has('linkedin'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('linkedin') }}</strong>
                                                     </span>
                                         @endif
@@ -149,7 +149,7 @@
                                         <label for="instagram"><i class="fa fa-instagram"></i> Instagram</label>
                                         <input type="text" name="instagram" value="{{ $setting->instagram }}" id="instagram" placeholder="https://www.instagram.com/">
                                         @if ($errors->has('instagram'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('instagram') }}</strong>
                                                     </span>
                                         @endif
@@ -158,7 +158,7 @@
                                         <label for="youtube"><i class="fa fa-youtube"></i> Youtube</label>
                                         <input type="text" name="youtube" value="{{ $setting->youtube }}" id="youtube" placeholder="https://www.youtube.com/">
                                         @if ($errors->has('youtube'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('youtube') }}</strong>
                                                     </span>
                                         @endif
@@ -167,7 +167,7 @@
                                         <label for="location"><i class="fa fa-location-arrow"></i> Localisation</label>
                                         <input type="text" name="location" value="{{ $setting->location }}" id="location" placeholder="Abidjan, Angré, Programme 6">
                                         @if ($errors->has('location'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('location') }}</strong>
                                                     </span>
                                         @endif
@@ -176,7 +176,7 @@
                                         <label for="email"> Email</label>
                                         <input type="email" name="email" value="{{ $setting->email }}" id="email" placeholder="info@modabidzgroup.com">
                                         @if ($errors->has('choose_us_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('choose_us_en') }}</strong>
                                                     </span>
                                         @endif
@@ -185,7 +185,7 @@
                                         <label for="phone"> <i class="fa fa-phone"></i> Téléphone</label>
                                         <input type="tel" name="phone" value="{{ $setting->phone }}" id="phone" placeholder="+225 00 00 00 00 00">
                                         @if ($errors->has('phone'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('phone') }}</strong>
                                                     </span>
                                         @endif
@@ -201,7 +201,7 @@
                                                 </div>
                                             </div>
                                             @if ($errors->has('image'))
-                                                <span class="help-block text-red">
+                                                <span class="help-block textred">
                                                         <strong>{{ $errors->first('image') }}</strong>
                                                     </span>
                                             @endif

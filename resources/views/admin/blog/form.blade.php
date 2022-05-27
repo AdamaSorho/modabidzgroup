@@ -41,7 +41,7 @@
                                         <label for="title_fr">Titre (Français)</label>
                                         <input type="text" name="title_fr" id="title_fr" value="{{ $blog->getTranslation("title", "fr") }}">
                                         @if ($errors->has('title_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('title_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -50,7 +50,7 @@
                                         <label for="title_en">Libellé (Anglais)</label>
                                         <input type="text" name="title_en" id="title_en" value="{{ $blog->getTranslation("title", "en") }}">
                                         @if ($errors->has('title_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('title_en') }}</strong>
                                                     </span>
                                         @endif
@@ -71,7 +71,7 @@
                                                    id="image" name="image"
                                                    value="{{ $blog->image }}" required>
                                             @if ($errors->has('image'))
-                                                <span class="help-block text-red">
+                                                <span class="help-block textred textred text-red">
                                                         <strong>{{ $errors->first('image') }}</strong>
                                                     </span>
                                             @endif
@@ -97,7 +97,7 @@
                                             {!! $blog->getTranslation("content", "fr") !!}
                                         </textarea>
                                         @if ($errors->has('content_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('content_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -108,7 +108,7 @@
                                             {!! $blog->getTranslation("content", "en") !!}
                                         </textarea>
                                         @if ($errors->has('content_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('content_en') }}</strong>
                                                     </span>
                                         @endif

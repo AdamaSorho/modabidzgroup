@@ -40,7 +40,7 @@
                                         <label for="number">Expérience <span class="textred">(En chiffre)</span></label>
                                         <input type="number" name="number" id="number" value="{{ $experience->number }}">
                                         @if ($errors->has('number'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('number') }}</strong>
                                                     </span>
                                         @endif
@@ -49,7 +49,7 @@
                                         <label for="wording_fr">Libellé <span class="textred">(Français)</span></label>
                                         <input type="text" name="wording_fr" id="wording_fr" value="{{ $experience->getTranslation("wording", "fr") }}">
                                         @if ($errors->has('wording_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('wording_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -58,7 +58,7 @@
                                         <label for="wording_en">Libellé <span class="textred">(Anglais)</span></label>
                                         <input type="text" name="wording_en" id="wording_en" value="{{ $experience->getTranslation("wording", "en") }}">
                                         @if ($errors->has('wording_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('wording_en') }}</strong>
                                                     </span>
                                         @endif
@@ -67,7 +67,7 @@
                                         <label for="better">Meilleur expérience</label>
                                         <input id="better" type="checkbox" name="better" @if($experience->better) checked @endif value="1">
                                         @if ($errors->has('better'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('better') }}</strong>
                                                     </span>
                                         @endif

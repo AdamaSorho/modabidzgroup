@@ -41,7 +41,7 @@
                                         <label for="name">Nom du client</label>
                                         <input type="text" name="name" id="name" value="{{ $testimony->name }}">
                                         @if ($errors->has('name'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('name') }}</strong>
                                                     </span>
                                         @endif
@@ -50,7 +50,7 @@
                                         <label for="profession_fr">Profession (Français)</label>
                                         <input type="text" name="profession_fr" id="profession_fr" value="{{ $testimony->getTranslation("profession", "fr") }}">
                                         @if ($errors->has('profession_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('profession_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -59,7 +59,7 @@
                                         <label for="profession_en">Profession (Anglais)</label>
                                         <input type="text" name="profession_en" id="profession_en" value="{{ $testimony->getTranslation("profession", "en") }}">
                                         @if ($errors->has('profession_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('profession_en') }}</strong>
                                                     </span>
                                         @endif
@@ -70,7 +70,7 @@
                                             {{ $testimony->getTranslation("text", "fr") }}
                                         </textarea>
                                         @if ($errors->has('text_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('text_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -81,7 +81,7 @@
                                             {{ $testimony->getTranslation("text", "en") }}
                                         </textarea>
                                         @if ($errors->has('text_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('text_en') }}</strong>
                                                     </span>
                                         @endif

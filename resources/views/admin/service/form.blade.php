@@ -41,7 +41,7 @@
                                         <label for="wording_fr">Nom (Français)</label>
                                         <input type="text" name="wording_fr" id="wording_fr" value="{{ $service->getTranslation("wording", "fr") }}" required>
                                         @if ($errors->has('wording_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('wording_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -50,7 +50,7 @@
                                         <label for="wording_en">Nom (Anglais)</label>
                                         <input type="text" name="wording_en" id="wording_en" value="{{ $service->getTranslation("wording", "en") }}">
                                         @if ($errors->has('wording_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('wording_en') }}</strong>
                                                     </span>
                                         @endif
@@ -66,7 +66,7 @@
                                                 </div>
                                             </div>
                                             @if ($errors->has('image'))
-                                                <span class="help-block text-red">
+                                                <span class="help-block textred">
                                                         <strong>{{ $errors->first('image') }}</strong>
                                                     </span>
                                             @endif

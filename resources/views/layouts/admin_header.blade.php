@@ -53,7 +53,7 @@
                         <a href="#">
                             <div class="notification-item">
                                 <div class="notification-image">
-                                    <img src="images/comment.jpg" alt="">
+                                    <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
                                 </div>
                                 <div class="notification-content">
                                     <p>You have a notification.</p><span class="notification-time">2 hours ago</span>
@@ -65,7 +65,7 @@
                         <a href="#">
                             <div class="notification-item">
                                 <div class="notification-image">
-                                    <img src="images/comment.jpg" alt="">
+                                    <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
                                 </div>
                                 <div class="notification-content">
                                     <p>You have a notification.</p><span class="notification-time">2 hours ago</span>
@@ -77,7 +77,7 @@
                         <a href="#">
                             <div class="notification-item">
                                 <div class="notification-image">
-                                    <img src="images/comment.jpg" alt="">
+                                    <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
                                 </div>
                                 <div class="notification-content">
                                     <p>You have a notification.</p><span class="notification-time">2 hours ago</span>
@@ -103,7 +103,7 @@
                         <a href="#">
                             <div class="notification-item">
                                 <div class="notification-image">
-                                    <img src="images/comment.jpg" alt="">
+                                    <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
                                 </div>
                                 <div class="notification-content">
                                     <p>You have a notification.</p><span class="notification-time">2 hours ago</span>
@@ -115,7 +115,7 @@
                         <a href="#">
                             <div class="notification-item">
                                 <div class="notification-image">
-                                    <img src="images/comment.jpg" alt="">
+                                    <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
                                 </div>
                                 <div class="notification-content">
                                     <p>You have a notification.</p><span class="notification-time">2 hours ago</span>
@@ -127,7 +127,7 @@
                         <a href="#">
                             <div class="notification-item">
                                 <div class="notification-image">
-                                    <img src="images/comment.jpg" alt="">
+                                    <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
                                 </div>
                                 <div class="notification-content">
                                     <p>You have a notification.</p><span class="notification-time">2 hours ago</span>

@@ -41,7 +41,7 @@
                                         <label for="wording_fr">Libellé (Français)</label>
                                         <input type="text" name="wording_fr" id="wording_fr" value="{{ $category->getTranslation("wording", "fr") }}">
                                         @if ($errors->has('wording_fr'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('wording_fr') }}</strong>
                                                     </span>
                                         @endif
@@ -50,7 +50,7 @@
                                         <label for="wording_en">Libellé (Anglais)</label>
                                         <input type="text" name="wording_en" id="wording_en" value="{{ $category->getTranslation("wording", "en") }}">
                                         @if ($errors->has('wording_en'))
-                                            <span class="help-block">
+                                            <span class="help-block textred">
                                                         <strong>{{ $errors->first('wording_en') }}</strong>
                                                     </span>
                                         @endif
