@@ -14,8 +14,6 @@
     <link href="{{ asset("admin/css/style.css") }}" rel="stylesheet" type="text/css">
     <!--Flaticons CSS-->
     <link href="{{ asset("admin/font/flaticon.css") }}" rel="stylesheet" type="text/css">
-    <!--Plugin CSS-->
-{{--    <link href="{{ asset("admin/css/plugin.css") }}" rel="stylesheet" type="text/css">--}}
     <!--Dashboard CSS-->
     <link href="{{ asset("admin/css/dashboard.css") }}" rel="stylesheet" type="text/css">
     <link href="{{ asset("admin/css/icons.css") }}" rel="stylesheet" type="text/css">
@@ -57,7 +55,6 @@
 <!-- *Scripts* -->
 <script src="{{ asset("admin/js/jquery-3.2.1.min.js") }}"></script>
 <script src="{{ asset("admin/js/bootstrap.min.js") }}"></script>
-{{--<script src="{{ asset("admin/js/plugin.js") }}"></script>--}}
 <script src="{{ asset("admin/js/preloader.js") }}"></script>
 <script src="{{ asset("admin/js/main.js") }}"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

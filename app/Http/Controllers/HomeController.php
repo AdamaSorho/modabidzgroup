@@ -9,6 +9,7 @@ use App\Services\CarouselService;
 use App\Services\ExperienceService;
 use App\Services\MessageService;
 use App\Services\QualityService;
+use App\Services\ServiceService;
 use App\Services\SettingService;
 use App\Services\TestimonyService;
 use App\Services\VideoCategoryService;
@@ -29,6 +30,7 @@ class HomeController extends Controller
     private MessageService $messageService;
     private VideoCategoryService $videoCategoryService;
     private VideoService $videoService;
+    private ServiceService $serviceService;
 
     public function __construct(
         CarouselService $carouselService,
@@ -40,7 +42,8 @@ class HomeController extends Controller
         TestimonyService $testimonyService,
         MessageService $messageService,
         VideoCategoryService $videoCategoryService,
-        VideoService $videoService
+        VideoService $videoService,
+        ServiceService $serviceService
     )
     {
         $this->carouselService = $carouselService;
@@ -53,6 +56,7 @@ class HomeController extends Controller
         $this->messageService = $messageService;
         $this->videoCategoryService = $videoCategoryService;
         $this->videoService = $videoService;
+        $this->serviceService = $serviceService;
     }
 
     public function index(): Renderable
@@ -64,6 +68,7 @@ class HomeController extends Controller
         $betterExperience = $this->experienceService->getBetterExperience();
         $testimonies = $this->testimonyService->getLastTestimories();
         $recentBlogs = $this->blogService->getRecentBlogs(1);
+        $services = $this->serviceService->getServices();
 
         Session::put("setting", $setting);
 
@@ -74,12 +79,17 @@ class HomeController extends Controller
             "betterExperience" => $betterExperience,
             "testimonies" => $testimonies,
             "recentBlogs" => $recentBlogs,
+            "services" => $services,
         ]);
     }
 
     public function services(): Renderable
     {
-        return view("services");
+        $services = $this->serviceService->getServicesWithPaginator();
+
+        return view("services", [
+            "services" => $services,
+        ]);
     }
 
     public function blog(): Renderable

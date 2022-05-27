@@ -16,6 +16,11 @@ class ServiceService
         return Service::find($id);
     }
 
+    public function getServices($number = 4)
+    {
+        return Service::take($number)->get();
+    }
+
     public function storeService($data): void
     {
         if ($data["id"])

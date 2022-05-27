@@ -1,5 +1,10 @@
 @extends("layouts.admin_base")
 
+@section("styles")
+    <!--Plugin CSS-->
+    <link href="{{ asset("admin/css/plugin.css") }}" rel="stylesheet" type="text/css">
+@endsection
+
 @section("content")
     <div class="dashboard-content">
         <div class="row">
@@ -232,4 +237,8 @@
         </div>
     </div>
     <!-- Content / End -->
+@endsection
+
+@section("scripts")
+    <script src="{{ asset("admin/js/plugin.js") }}"></script>
 @endsection
