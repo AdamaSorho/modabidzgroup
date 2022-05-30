@@ -87,8 +87,8 @@
                                     <div class="col-md-6">
                                         <label for="type">@lang("Type")</label>
                                         <select name="type" id="type">
-                                            <option value="1">@lang("Blog")</option>
-                                            <option value="2">@lang("Actualité")</option>
+                                            <option value="1" @if($blog->type == 1) selected @endif>@lang("Blog")</option>
+                                            <option value="2" @if($blog->type == 2) selected @endif>@lang("Actualité")</option>
                                         </select>
                                     </div>
                                     <div class="col-md-12">
@@ -136,6 +136,7 @@
                     extraPlugins: [SimpleUploadAdapterPlugin],
                     headers: {
                         token: _token,
+                        url: "/admin/ckeditor/upload",
                     }
                 }
             )

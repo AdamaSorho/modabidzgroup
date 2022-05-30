@@ -36,10 +36,6 @@
 @include("layouts.residence.navigation")
 <!-- Navigation Bar Ends -->
 
-<!-- Banner start -->
-@include("layouts.residence.banner")
-<!-- Banner Ends -->
-
 @yield("content")
 
 <!-- Footer -->

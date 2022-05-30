@@ -1,12 +1,12 @@
 //Define an adapter to upload the files
 class MyUploadAdapter {
-    constructor(loader, token) {
+    constructor(loader, token, url) {
         // The file loader instance to use during the upload. It sounds scary but do not
         // worry — the loader will be passed into the adapter later on in this guide.
         this.loader = loader;
 
         // URL where to send files.
-        this.url = "/admin/ckeditor/upload";
+        this.url = url ?? "/admin/ckeditor/upload";
         this.token = token;
 
         //
@@ -98,6 +98,6 @@ function SimpleUploadAdapterPlugin(editor) {
 
     editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
         // Configure the URL to the upload script in your back-end here!
-        return new MyUploadAdapter(loader, options.token);
+        return new MyUploadAdapter(loader, options.token, options.url);
     };
 }

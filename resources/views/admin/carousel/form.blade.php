@@ -76,15 +76,9 @@
                                     <div class="col-md-4">
                                         <div class="form-group{{ $errors->has("image") ? " has-error": "" }}">
                                             <label for="image">Image <strong class="textred">* [Taille 1366x800]</strong></label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input"
-                                                           id="image" name="image"
-                                                           value="{{ $carousel->image }}" required>
-                                                </div>
-                                            </div>
+                                            <input type="file" id="image" name="image" value="{{ $carousel->image }}">
                                             @if ($errors->has('image'))
-                                                <span class="help-block textred text-red">
+                                                <span class="help-block textred">
                                                         <strong>{{ $errors->first('image') }}</strong>
                                                     </span>
                                             @endif
@@ -97,7 +91,7 @@
                                             </a>
                                         @endif
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <label for="is_active">Activer</label>
                                         <input id="is_active" type="checkbox" name="is_active" @if($carousel->is_active) checked @endif value="1">
                                         @if ($errors->has('is_active'))
@@ -105,6 +99,13 @@
                                                         <strong>{{ $errors->first('is_active') }}</strong>
                                                     </span>
                                         @endif
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="type">@lang("Type")</label>
+                                        <select name="type" id="type">
+                                            <option value="1" @if($carousel->type == 1) selected @endif>@lang("Accueil")</option>
+                                            <option value="2" @if($carousel->type == 2) selected @endif>@lang("Résidence")</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!-- Row / End -->

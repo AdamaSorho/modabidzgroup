@@ -9,6 +9,8 @@
                     <th>Date</th>
                     <th>Titre</th>
                     <th>Sous-titre</th>
+                    <th>@lang("Type")</th>
+                    <th>@lang("Actif")</th>
                     <th>Image</th>
                     <th class="textright">Action</th>
                 </tr>
@@ -19,6 +21,20 @@
                         <td>{{ \Carbon\Carbon::parse($carousel->created_at)->format("d/m/Y") }}</td>
                         <td>{{ $carousel->title }}</td>
                         <td>{{ $carousel->subtitle }}</td>
+                        <td>
+                            @if($carousel->type == 1)
+                                @lang("Accueil")
+                            @else
+                                @lang("Résidence")
+                            @endif
+                        </td>
+                        <td>
+                            @if($carousel->is_active)
+                                <label for="yes" class="label label-success">@lang("OUI")</label>
+                            @else
+                                <label for="no" class="label label-warning">@lang("NON")</label>
+                            @endif
+                        </td>
                         <td>
                             @if($carousel->image)
                                 <a href="{{url($carousel->image)}}">

@@ -48,7 +48,7 @@
 
 <!-- Contact Javascript File -->
 <script src="{{ asset("mail/jqBootstrapValidation.min.js") }}"></script>
-<script src="{{ asset("mail/contact.js") }}"></script>
+{{--<script src="{{ asset("mail/contact.js") }}"></script>--}}
 
 <!-- Template Javascript -->
 <script src="{{ asset("js/main.js") }}"></script>

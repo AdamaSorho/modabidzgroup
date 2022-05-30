@@ -50,7 +50,7 @@
         <div class="container pt-0 pt-lg-4">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid" src="img/about.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset("img/about.jpg") }}" alt="">
                 </div>
                 <div class="col-lg-7 mt-5 mt-lg-0 pl-lg-5">
                     <h6 class="text-secondary text-uppercase font-weight-medium mb-3">@lang("À propos de nous")</h6>
@@ -234,53 +234,57 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">@lang("Témoignages")</h6>
-            <h1 class="display-4 text-center mb-5">@lang("Ce que nos clients disent")</h1>
-            <div class="owl-carousel testimonial-carousel">
-                @foreach($testimonies as $testimony)
-                    <div class="testimonial-item">
-                        <img class="position-relative rounded-circle bg-white shadow mx-auto" src="img/testimonial-1.jpg" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
-                        <div class="bg-light text-center p-4 pt-0">
-                            <h5 class="font-weight-medium mt-5">{{ $testimony->name }}</h5>
-                            <p class="text-muted font-italic">{{ $testimony->profession }}</p>
-                            <p class="m-0">{{ $testimony->text }}</p>
+    @if($testimonies)
+        <div class="container-fluid py-5">
+            <div class="container">
+                <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">@lang("Témoignages")</h6>
+                <h1 class="display-4 text-center mb-5">@lang("Ce que nos clients disent")</h1>
+                <div class="owl-carousel testimonial-carousel">
+                    @foreach($testimonies as $testimony)
+                        <div class="testimonial-item">
+                            <img class="position-relative rounded-circle bg-white shadow mx-auto" src="img/testimonial-1.jpg" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
+                            <div class="bg-light text-center p-4 pt-0">
+                                <h5 class="font-weight-medium mt-5">{{ $testimony->name }}</h5>
+                                <p class="text-muted font-italic">{{ $testimony->profession }}</p>
+                                <p class="m-0">{{ $testimony->text }}</p>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
+    @endif
     <!-- Testimonial End -->
 
 
     <!-- Blog Start -->
-    <div class="container-fluid mt-5 pb-2">
-        <div class="container">
-            <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">@lang("Notre Blog")</h6>
-            <h1 class="display-4 text-center mb-5">@lang("Récentes publications du blog")</h1>
-            <div class="row">
-                @foreach($recentBlogs as $recent)
-                    <div class="col-lg-4 mb-2">
-                        <div class="shadow mb-4">
-                            <div class="position-relative">
-                                <img class="img-fluid w-100" src="{{ url($recent->image) }}" alt="">
-                                <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
-                                    <h4 class="text-center text-white font-weight-medium mb-3">{{ $recent->title }}</h4>
-                                    <div class="d-flex text-light">
-                                        <small class="mr-2"><i class="fa fa-user text-secondary"></i> {{ $recent->user->name }}</small>
-                                        <small class="mr-2"><i class="fa fa-folder text-secondary"></i> {{ $recent->category->wording }}</small>
-                                        <small class="mr-2"><i class="fa fa-comments text-secondary"></i> {{ sizeof($recent->messages) }}</small>
-                                    </div>
-                                </a>
+    @if($recentBlogs)
+        <div class="container-fluid mt-5 pb-2">
+            <div class="container">
+                <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">@lang("Notre Blog")</h6>
+                <h1 class="display-4 text-center mb-5">@lang("Récentes publications du blog")</h1>
+                <div class="row">
+                    @foreach($recentBlogs as $recent)
+                        <div class="col-lg-4 mb-2">
+                            <div class="shadow mb-4">
+                                <div class="position-relative">
+                                    <img class="img-fluid w-100" src="{{ url($recent->image) }}" alt="">
+                                    <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
+                                        <h4 class="text-center text-white font-weight-medium mb-3">{{ $recent->title }}</h4>
+                                        <div class="d-flex text-light">
+                                            <small class="mr-2"><i class="fa fa-user text-secondary"></i> {{ $recent->user->name }}</small>
+                                            <small class="mr-2"><i class="fa fa-folder text-secondary"></i> {{ $recent->category->wording }}</small>
+                                            <small class="mr-2"><i class="fa fa-comments text-secondary"></i> {{ sizeof($recent->messages) }}</small>
+                                        </div>
+                                    </a>
+                                </div>
+                                {!! \Illuminate\Support\Str::limit($recent->content, 300) !!}
                             </div>
-                            {!! \Illuminate\Support\Str::limit($recent->content, 300) !!}
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
+    @endif
     <!-- Blog End -->
 @endsection

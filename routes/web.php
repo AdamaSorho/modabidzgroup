@@ -26,6 +26,9 @@ Route::group(["prefix" => "/news"], function () {
 
 Route::group(["prefix" => "/residence"], function () {
     Route::get("/", [\App\Http\Controllers\ResidenceController::class, "index"])->name("residence.home");
+    Route::group(["prefix" => "/room"], function () {
+        Route::get("/detail", [\App\Http\Controllers\ResidenceController::class, "room_detail"])->name("residence.room.detail");
+    });
 });
 
 Route::group(["prefix" => "/blog"], function () {

@@ -61,7 +61,7 @@ class HomeController extends Controller
 
     public function index(): Renderable
     {
-        $carousels = $this->carouselService->getCarouselsWithPaginator();
+        $carousels = $this->carouselService->getCarouselsHome();
         $setting = $this->settingService->getSetting();
         $qualities = $this->qualityService->getQualitiesWithPaginator();
         $experiences = $this->experienceService->getExperiencesWithPaginator();

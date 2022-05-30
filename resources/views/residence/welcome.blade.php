@@ -2,30 +2,9 @@
 
 @section("content")
 
-    <section id="mt_about">
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-6 col-sm-12">
-                    <!-- <div class="square-bg-block"></div> -->
-                    <div class="image-rev">
-                        <div class="blur-img" style="background-image: url(images/list8.jpg);"></div>
-                        <img src="images/list8.jpg" alt="">
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-sm-12">
-                    <div class="about_services text-center">
-                        <h4>About Us</h4>
-                        <h2 class="text-uppercase">Here is a tribute to <span>good life!</span></h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been the industry's standard dummy when an unknown printer took a galley of type andspecimen book eiusmod tempor incididunt ut labore.</p>
-                        <a href="about-us.html" class="btn-red">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Banner start -->
+    @include("layouts.residence.banner")
+    <!-- Banner Ends -->
 
     <!-- Popular Packages -->
     <section class="popular-packages">
@@ -37,10 +16,10 @@
             <div class="row room-slider slider-button">
                 <div class="col-sm-4">
                     <div class="package-item">
-                        <img src="images/hotel/room-1.jpg" alt="Image">
+                        <img src="{{ asset("admin/images/hotel/room-1.jpg") }}" alt="Image">
                         <div class="package-content">
                             <h5>Starting: <span>$659</span> / PER </h5>
-                            <h3><a href="hotel-detail.html">Luxury Room</a></h3>
+                            <h3><a href="{{ route("residence.room.detail") }}">Luxury Room</a></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
                         </div>
                     </div>
