@@ -56,5 +56,11 @@
     "OUI": "YES",
     "NON": "NO",
     "Actif": "Active",
-    "Chambre Détail": "Room Detail"
+    "Chambre Détail": "Room Detail",
+    "Indisponible": "Unavailable",
+    "Disponible": "Available",
+    "Ajouter une image": "Add an image",
+    "<span>Chambres</span> Populaires": "Popular <span>Rooms</span>",
+    "À partir :": "Starting:",
+    "JOUR": "DAY"
 }

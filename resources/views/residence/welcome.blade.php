@@ -10,53 +10,23 @@
     <section class="popular-packages">
         <div class="container">
             <div class="section-title">
-                <h2>Popular <span>Rooms</span></h2>
+                <h2>@lang("<span>Chambres</span> Populaires")</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .</p>
             </div>
             <div class="row room-slider slider-button">
-                <div class="col-sm-4">
-                    <div class="package-item">
-                        <img src="{{ asset("admin/images/hotel/room-1.jpg") }}" alt="Image">
-                        <div class="package-content">
-                            <h5>Starting: <span>$659</span> / PER </h5>
-                            <h3><a href="{{ route("residence.room.detail") }}">Luxury Room</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                @foreach($rooms as $room)
+                    <div class="col-sm-4">
+                        <div class="package-item">
+                            <img src="{{ $room->photos ? url($room->photos[0]->image) : asset("admin/images/hotel/room-1.jpg") }}" alt="Image">
+                            <div class="package-content">
+                                <h5>@lang("À partir :") <span>{{ $room->amount }} F CFA</span> / @lang("JOUR") </h5>
+                                <h3><a href="{{ route("residence.room.detail", $room->id) }}">{{ $room->name }}</a></h3>
+                                <p>{!! \Illuminate\Support\Str::limit($room->description) !!}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col-sm-4">
-                    <div class="package-item">
-                        <img src="images/hotel/room-2.jpg" alt="Image">
-                        <div class="package-content">
-                            <h5>Starting: <span>$459</span> / PER </h5>
-                            <h3><a href="hotel-detail.html">Standard Room</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="package-item">
-                        <img src="images/hotel/room-3.jpg" alt="Image">
-                        <div class="package-content">
-                            <h5>Starting: <span>$259</span> / PER </h5>
-                            <h3><a href="hotel-detail.html">Double Room</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="package-item">
-                        <img src="images/hotel/room-4.jpg" alt="Image">
-                        <div class="package-content">
-                            <h5>Starting: <span>$159</span> / PER </h5>
-                            <h3><a href="hotel-detail.html">Single Room</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

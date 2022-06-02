@@ -66,7 +66,16 @@
                     <li><a href="{{ route("admin.video.create") }}">@lang("Ajouter") </a></li>
                 </ul>
             </li>
-
+            <li>
+                <hr>
+                <span>Résidence</span>
+                <hr>
+                <a><i class="sl sl-icon-layers"></i> Chambres</a>
+                <ul>
+                    <li><a href="{{ route("admin.residence.room.index") }}">@lang("Liste") </a></li>
+                    <li><a href="{{ route("admin.residence.room.create") }}">@lang("Ajouter") </a></li>
+                </ul>
+            </li>
             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                     <i class="sl sl-icon-power"></i> @lang("Déconnexion")

@@ -28,7 +28,8 @@ class CarouselRequest extends FormRequest
             "title_en" => "nullable|string",
             "subtitle_fr" => "nullable|string",
             "subtitle_en" => "nullable|string",
-            "image" => "nullable|mimes:jpg,png,jpeg|dimensions:width=1366,height=800|max:1024",
+//            "image" => "nullable|mimes:jpg,png,jpeg|dimensions:width=1366,height=800|max:1024",
+            "image" => "nullable|mimes:jpg,png,jpeg|max:1024",
             "is_active" => "boolean",
             "type" => "required|in:1,2",
         ];

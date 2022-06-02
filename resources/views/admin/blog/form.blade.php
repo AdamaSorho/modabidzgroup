@@ -149,6 +149,7 @@
                 extraPlugins: [SimpleUploadAdapterPlugin],
                 headers: {
                     token: _token,
+                    url: "/admin/ckeditor/upload",
                 }
             } )
             .catch( error => {

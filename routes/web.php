@@ -27,7 +27,7 @@ Route::group(["prefix" => "/news"], function () {
 Route::group(["prefix" => "/residence"], function () {
     Route::get("/", [\App\Http\Controllers\ResidenceController::class, "index"])->name("residence.home");
     Route::group(["prefix" => "/room"], function () {
-        Route::get("/detail", [\App\Http\Controllers\ResidenceController::class, "room_detail"])->name("residence.room.detail");
+        Route::get("/detail/{id}", [\App\Http\Controllers\ResidenceController::class, "room_detail"])->name("residence.room.detail");
     });
 });
 
@@ -123,6 +123,24 @@ Route::middleware(["auth"])->group(function () {
                 Route::get("/update/{id}", [\App\Http\Controllers\Admin\VideoCategoryController::class, "create"])->name("admin.video.category.update");
                 Route::post("/store", [\App\Http\Controllers\Admin\VideoCategoryController::class, "store"])->name("admin.video.category.store");
                 Route::post("/delete/{category}", [\App\Http\Controllers\Admin\VideoCategoryController::class, "destroy"])->name("admin.video.category.delete");
+            });
+        });
+
+        Route::group(["prefix" => "/residence"], function () {
+            Route::group(["prefix" => "/room"], function () {
+                Route::get("/list", [\App\Http\Controllers\Admin\Residence\RoomController::class, "index"])->name("admin.residence.room.index");
+                Route::get("/create", [\App\Http\Controllers\Admin\Residence\RoomController::class, "create"])->name("admin.residence.room.create");
+                Route::get("/update/{id}", [\App\Http\Controllers\Admin\Residence\RoomController::class, "create"])->name("admin.residence.room.update");
+                Route::post("/store", [\App\Http\Controllers\Admin\Residence\RoomController::class, "store"])->name("admin.residence.room.store");
+                Route::post("/delete/{room}", [\App\Http\Controllers\Admin\Residence\RoomController::class, "destroy"])->name("admin.residence.room.delete");
+
+                Route::group(["prefix" => "/photo"], function () {
+                    Route::get("/list/{room_id}", [\App\Http\Controllers\Admin\Residence\RoomPhotoController::class, "index"])->name("admin.residence.room.photo.index");
+                    Route::get("/create/{room_id}", [\App\Http\Controllers\Admin\Residence\RoomPhotoController::class, "create"])->name("admin.residence.room.photo.create");
+                    Route::get("/update/{room_id}/{id}", [\App\Http\Controllers\Admin\Residence\RoomPhotoController::class, "create"])->name("admin.residence.room.photo.update");
+                    Route::post("/store", [\App\Http\Controllers\Admin\Residence\RoomPhotoController::class, "store"])->name("admin.residence.room.photo.store");
+                    Route::post("/delete/{room_id}/{photo}", [\App\Http\Controllers\Admin\Residence\RoomPhotoController::class, "destroy"])->name("admin.residence.room.photo.delete");
+                });
             });
         });
     });
