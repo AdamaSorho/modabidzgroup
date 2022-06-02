@@ -3,8 +3,21 @@
     <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                @foreach($carousels as $carousel)
+                @if($carousels)
                     <div class="carousel-item active">
+                        <img class="w-100" src="{{ $carousels[0]->image ? url($carousels[0]->image) : asset("img/carousel-1.jpg") }}" alt="Image">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase mb-md-3">{{ $carousels[0]->title }}</h4>
+                                <h1 class="display-3 text-white mb-md-4">{{ $carousels[0]->subtitle }}</h1>
+                                {{--                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">@lang("En savoir plus")</a>--}}
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                @foreach($carousels as $carousel)
+                    @if ($loop->first) @continue @endif
+                    <div class="carousel-item">
                         <img class="w-100" src="{{ $carousel->image ? url($carousel->image) : asset("img/carousel-1.jpg") }}" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 900px;">

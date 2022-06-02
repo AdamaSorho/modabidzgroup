@@ -233,68 +233,39 @@
                         </div>
                         <div class="sidebar-item">
                             <div class="detail-title">
-                                <h3>Related Room</h3>
+                                <h3>@lang("")</h3>
                             </div>
                             <div class="sidebar-content sidebar-slider">
-                                <div class="sidebar-package">
-                                    <div class="sidebar-package-image">
-                                        <img src="images/hotel/room-1.jpg" alt="Images">
-                                    </div>
-                                    <div class="destination-content sidebar-package-content">
-                                        <h4><a href="hotel-detail.html">Super Room</a></h4>
-                                        <div class="deal-rating">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star-o"></span>
-                                            <span class="fa fa-star-o"></span>
+                                @foreach($rooms as $element)
+                                    <div class="sidebar-package">
+                                        <div class="sidebar-package-image">
+                                            <img src="{{ $element->photos ? url($element->photos[0]->image) : asset("admin/images/hotel/room-1.jpg") }}" alt="Images">
                                         </div>
-                                        <p><i class="flaticon-time"></i> Starting from <span class="bold">$659</span> </p>
-                                        <a href="#" class=" btn-red">Book Now</a>
-                                    </div>
-                                </div>
-                                <div class="sidebar-package">
-                                    <div class="sidebar-package-image">
-                                        <img src="images/hotel/room-2.jpg" alt="Images">
-                                    </div>
-                                    <div class="destination-content sidebar-package-content">
-                                        <h4><a href="hotel-detail.html">Double Room</a></h4>
-                                        <div class="deal-rating">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star-o"></span>
-                                            <span class="fa fa-star-o"></span>
+                                        <div class="destination-content sidebar-package-content">
+                                            <h4><a href="{{ route("residence.room.detail", $element->id) }}">{{ $element->name }}</a></h4>
+                                            <div class="deal-rating">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star-o"></span>
+                                                <span class="fa fa-star-o"></span>
+                                            </div>
+                                            <p><i class="flaticon-time"></i> @lang("À partir :") <span class="bold">{{ $room->amount }} F CFA</span> </p>
+                                            <a href="#" class=" btn-red">@lang("Réserver maintenant")</a>
                                         </div>
-                                        <p><i class="flaticon-time"></i> Staring from <span class="bold">$659</span> </p>
-                                        <a href="#" class="btn-red">Book Now</a>
                                     </div>
-                                </div>
-                                <div class="sidebar-package">
-                                    <div class="sidebar-package-image">
-                                        <img src="images/hotel/room-3.jpg" alt="Images">
-                                    </div>
-                                    <div class="destination-content sidebar-package-content">
-                                        <h4><a href="hotel-detail.html">Amazing Room</a></h4>
-                                        <div class="deal-rating">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star-o"></span>
-                                            <span class="fa fa-star-o"></span>
-                                        </div>
-                                        <p><i class="flaticon-time"></i> Starting from <span class="bold">$659</span> </p>
-                                        <a href="#" class="btn-red">Book Now</a>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="sidebar-item sidebar-helpline">
+                            @php
+                                $setting = session("setting");
+                            @endphp
                             <div class="sidebar-helpline-content">
-                                <h3>Any Questions?</h3>
-                                <p>Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sedpr do eiusmod tempor incididunt ut.</p>
-                                <p><i class="flaticon-phone-call"></i> (012)-345-6789</p>
-                                <p><i class="flaticon-mail"></i> tourntravel@testmail.com</p>
+                                <h3>@lang("Avez-vous une question ?")</h3>
+                                <p>@lang("Vous pouvez nous contacter avec ces coordonnées ci-dessous :")</p>
+                                <p><i class="flaticon-phone-call"></i> {{ $setting->phone ?? '' }}</p>
+                                <p><i class="flaticon-mail"></i> {{ $setting->email ?? '' }}</p>
                             </div>
                         </div>
                     </aside>

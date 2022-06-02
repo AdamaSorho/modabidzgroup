@@ -35,9 +35,11 @@ class ResidenceController extends Controller
     public function room_detail($id): Renderable
     {
         $room = $this->roomService->getRoom($id);
+        $rooms = $this->roomService->getRoomsWithPaginator(6);
 
         return view("residence.room-detail", [
             "room" => $room,
+            "rooms" => $rooms,
         ]);
     }
 }
