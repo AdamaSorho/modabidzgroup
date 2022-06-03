@@ -26,7 +26,7 @@ class ServiceRequest extends FormRequest
         return [
             "wording_fr" => "required|string|max:50",
             "wording_en" => "required|string|max:50",
-            "image" => "nullable|mimes:jpg,png,jpeg|dimensions:width=300,height=300|max:1024",
+            "image" => "nullable|mimes:jpg,png,jpeg|dimensions:min-width=100,min-height=100|max:1024",
         ];
     }
 }
