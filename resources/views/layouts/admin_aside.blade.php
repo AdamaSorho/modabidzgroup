@@ -18,7 +18,7 @@
                 </ul>
             </li>
             <li>
-                <a><i class="sl sl-icon-layers"></i> Expériences</a>
+                <a><i class="sl sl-icon-layers"></i> Expertise</a>
                 <ul>
                     <li><a href="{{ route("admin.experience.index") }}">@lang("Liste") </a></li>
                     <li><a href="{{ route("admin.experience.create") }}">@lang("Ajouter") </a></li>
