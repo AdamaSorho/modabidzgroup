@@ -266,7 +266,7 @@
 
 
     <!-- Blog Start -->
-    @if($recentBlogs)
+    @if(sizeof($recentBlogs) > 0)
         <div class="container-fluid mt-5 pb-2">
             <div class="container">
                 <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">@lang("Notre Blog")</h6>
