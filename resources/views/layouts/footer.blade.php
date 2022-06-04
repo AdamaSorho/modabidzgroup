@@ -6,7 +6,7 @@
     <div class="row pt-5">
         <div class="col-lg-3 col-md-6 mb-5">
             <a href=""><h2 class="text-secondary mb-3"><span class="text-white">MODABIDZ</span>GROUP</h2></a>
-            <p>{{ \Illuminate\Support\Str::limit($setting->about_us, 500) ?? '' }}</p>
+            <p>{{ \Illuminate\Support\Str::limit($setting->about_us, 400) ?? '' }}</p>
             <div class="d-flex justify-content-start mt-4">
                 <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="{{ $setting->twitter ?? '#' }}"><i class="fab fa-twitter"></i></a>
                 <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="{{ $setting->facebook ?? '#' }}"><i class="fab fa-facebook-f"></i></a>
