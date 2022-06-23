@@ -30,7 +30,11 @@
                                     <i class="fa fa-3x fa-cloud-sun text-secondary"></i>
                                 @endif
                             </div>
-                            <h4 class="font-weight-bold m-0">{{ $service->wording }}</h4>
+                            @if($service->id == 1)
+                                <a href="{{ route("residence.home") }}"><h4 class="font-weight-bold m-0">{{ $service->wording }}</h4></a>
+                            @else
+                                <h4 class="font-weight-bold m-0">{{ $service->wording }}</h4>
+                            @endif
                         </div>
                     </div>
                 @endforeach

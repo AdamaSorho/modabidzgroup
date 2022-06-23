@@ -40,6 +40,9 @@ class SettingRequest extends FormRequest
             "image" => "nullable|mimes:jpg,png,jpeg|dimensions:width=500,height=600|max:1024",
             "choose_us_fr" => "required|string",
             "choose_us_en" => "required|string",
+            "header_color" => "nullable|string|max:155",
+            "footer_color" => "nullable|string|max:155",
+            "logo" => "nullable|mimes:jpg,png,jpeg|max:1024",
         ];
     }
 }

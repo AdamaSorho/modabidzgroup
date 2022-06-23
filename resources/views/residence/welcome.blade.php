@@ -1,10 +1,16 @@
 @extends("layouts.residence.base")
 
-@section("content")
+@section("styles")
+    <link href="{{ asset("admin/css/plugin.css") }}" rel="stylesheet" type="text/css">
+@endsection
+
+    @section("content")
 
     <!-- Banner start -->
     @include("layouts.residence.banner")
     <!-- Banner Ends -->
+
+    @include('sweetalert::alert')
 
     <!-- Popular Packages -->
     <section class="popular-packages">
@@ -33,7 +39,7 @@
     <!-- Popular Packages Ends -->
 
     <!-- Popular Packages -->
-    <section class="services">
+    {{--<section class="services">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -89,12 +95,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- Popular Packages Ends -->
 
 
     <!-- Trip Ad -->
-    <section class="cta">
+    {{--<section class="cta">
         <div class="container">
             <div class="cta-content text-center">
                 <div class="cta-title">
@@ -106,11 +112,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- Trip Ad Ends -->
 
     <!-- Deals On Sale -->
-    <section class="deals-on-sale">
+    {{--<section class="deals-on-sale">
         <div class="container">
             <div class="section-title">
                 <h2>Awesome Places</h2>
@@ -191,12 +197,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- Deals On Sale Ends -->
 
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    {{--<section class="testimonials">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -297,11 +303,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- Testimonials Ends -->
 
     <!-- Countdown -->
-    <section class="countdown-section">
+    {{--<section class="countdown-section">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -319,11 +325,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- Countdown Ends -->
 
     <!-- Blog -->
-    <section class="blog">
+    {{--<section class="blog">
         <div class="container">
             <div class="section-title">
                 <h2>Latest <span>News</span></h2>
@@ -368,11 +374,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- Blog Ends -->
 
     <!-- Trusted Partners -->
-    <section class="trusted-partners">
+    {{--<section class="trusted-partners">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-xs-4">
@@ -398,6 +404,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- Trusted Partners Ends -->
+@endsection
+
+@section("scripts")
+    <script src="{{ asset("admin/js/plugin.js") }}"></script>
 @endsection

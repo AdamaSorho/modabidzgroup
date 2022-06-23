@@ -93,50 +93,28 @@
             <a class="dropdown-toggle" data-toggle="dropdown">
                 <div class="dropdown-item">
                     <i class="sl sl-icon-bell"></i>
-                    <span class="notify">3</span>
+                    <span class="notify">{{ sizeof($notifications) }}</span>
                 </div>
             </a>
             <div class="dropdown-menu notification-menu">
-                <h4> 599 Notifications</h4>
+                <h4>{{ sizeof($notifications) }} @lang("Réservation(s)")</h4>
                 <ul>
-                    <li>
-                        <a href="#">
-                            <div class="notification-item">
-                                <div class="notification-image">
-                                    <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
+                    @foreach($recentNotifications as $notification)
+                        <li>
+                            <a href="{{ route("admin.residence.reservation.index.one", $notification->id) }}">
+                                <div class="notification-item">
+                                    <div class="notification-image">
+                                        <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>@lang("Nouvelle réservation.")</p><span class="notification-time">{{ $notification->getHours() }}</span>
+                                    </div>
                                 </div>
-                                <div class="notification-content">
-                                    <p>You have a notification.</p><span class="notification-time">2 hours ago</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="notification-item">
-                                <div class="notification-image">
-                                    <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
-                                </div>
-                                <div class="notification-content">
-                                    <p>You have a notification.</p><span class="notification-time">2 hours ago</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="notification-item">
-                                <div class="notification-image">
-                                    <img src="{{ asset("admin/images/comment.jpg") }}" alt="">
-                                </div>
-                                <div class="notification-content">
-                                    <p>You have a notification.</p><span class="notification-time">2 hours ago</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
-                <p class="all-noti"><a href="#">See all notifications</a></p>
+                <p class="all-noti"><a href="{{ route("admin.residence.reservation.index") }}">@lang("Voir toutes les réservations")</a></p>
             </div>
         </div>
     </div>

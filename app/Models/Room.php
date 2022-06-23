@@ -17,4 +17,9 @@ class Room extends Model
     {
         return $this->hasMany(RoomPhoto::class);
     }
+
+    public function reservations(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

@@ -1,6 +1,7 @@
 @extends("layouts.residence.base")
 
 @section("content")
+    @include('sweetalert::alert')
     <!-- Breadcrumb -->
     @component("components.residence.breadscrumb", [
                 "route" => route("residence.home"),
@@ -193,39 +194,74 @@
                     <aside class="detail-sidebar sidebar-wrapper">
                         <div class="sidebar-item sidebar-item-dark">
                             <div class="detail-title">
-                                <h3>Book Your Room</h3>
+                                <h3>@lang("Réservation Cette chambre")</h3>
                             </div>
-                            <form>
+                            <form method="post" action="{{ route("residence.room.booking") }}">
+                                @csrf
+                                <input type="hidden" name="room_id" value="{{ $room->id }}">
                                 <div class="row">
                                     <div class="form-group col-xs-12">
-                                        <input type="text" class="form-control" id="Name1" placeholder="Name">
+                                        <input type="text" name="name" class="form-control" id="name" placeholder="@lang("Nom")">
+                                        @if ($errors->has('name'))
+                                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('name') }}</strong>
+                                                    </span>
+                                        @endif
                                     </div>
                                     <div class="form-group col-xs-12">
-                                        <input type="email" class="form-control" id="email1" placeholder="Email">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="@lang("Email")" required>
+                                        @if ($errors->has('email'))
+                                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                    </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group col-xs-12">
-                                        <input type="date" class="form-control" id="date" placeholder="Arrival date">
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="@lang("Téléphone")" required>
+                                        @if ($errors->has('phone'))
+                                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('phone') }}</strong>
+                                                    </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group col-xs-12">
-                                        <input type="date" class="form-control" id="date" placeholder="Departure date">
+                                        <input type="date" class="form-control" id="check_in" name="check_in" required placeholder="@lang("Arrivée")">
+                                        @if ($errors->has('check_in'))
+                                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('check_in') }}</strong>
+                                                    </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group col-xs-12">
-                                        <select name="custom-select-2" class=" form-control" tabindex="1">
-                                            <option value="0">Guest</option>
-                                            <option value="1">0</option>
-                                            <option value="2">1</option>
-                                            <option value="3">2</option>
-                                            <option value="4">3</option>
-                                            <option value="5">4</option>
+                                        <input type="date" class="form-control" id="check_out" name="check_out" required placeholder="@lang("Départ")">
+                                        @if ($errors->has('check_out'))
+                                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('check_out') }}</strong>
+                                                    </span>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group col-xs-12">
+                                        <select name="guest" class=" form-control" tabindex="1">
+                                            <option value="" disabled selected>@lang("Invité")</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
                                         </select>
+                                        @if ($errors->has('guest'))
+                                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('guest') }}</strong>
+                                                    </span>
+                                        @endif
                                     </div>
 
                                     <div class="col-xs-12">
                                         <div class="comment-btn">
-                                            <a href="#" class="btn-blue btn-red">Book Now</a>
+                                            <button type="submit" class="btn-red btn-red">@lang("RÉSERVER")</button>
                                         </div>
                                     </div>
                                 </div>
@@ -233,7 +269,7 @@
                         </div>
                         <div class="sidebar-item">
                             <div class="detail-title">
-                                <h3>@lang("")</h3>
+                                <h3>@lang("Réservation Cette chambre")</h3>
                             </div>
                             <div class="sidebar-content sidebar-slider">
                                 @foreach($rooms as $element)
@@ -251,7 +287,7 @@
                                                 <span class="fa fa-star-o"></span>
                                             </div>
                                             <p><i class="flaticon-time"></i> @lang("À partir :") <span class="bold">{{ $room->amount }} F CFA</span> </p>
-                                            <a href="#" class=" btn-red">@lang("Réserver maintenant")</a>
+                                            <a href="{{ route("residence.room.detail", $element->id) }}" class=" btn-red">@lang("Réserver maintenant")</a>
                                         </div>
                                     </div>
                                 @endforeach

@@ -23,9 +23,9 @@
 </head>
 <body>
 <!-- Preloader -->
-<div id="preloader">
+{{--<div id="preloader">
     <div id="status"></div>
-</div>
+</div>--}}
 <!-- Preloader Ends -->
 
 <!-- start Container Wrapper -->

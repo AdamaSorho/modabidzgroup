@@ -191,6 +191,25 @@
                                         @endif
                                     </div>
                                     <div class="col-md-4">
+                                        <label for="header_color"> <i class="fa fa-pencil"></i> <a href="https://htmlcolorcodes.com" target="_blank">Couleur de l'entête <i class="tip" data-tip-content="Cliquez dessus pour récupérer un code couleur"></i></a></label>
+                                        <input type="text" name="header_color" placeholder="Ex: #9B0950" value="{{ $setting->header_color }}" id="header_color">
+                                        @if ($errors->has('header_color'))
+                                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('header_color') }}</strong>
+                                                    </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="footer_color"> <i class="fa fa-pencil"></i> <a
+                                                href="https://htmlcolorcodes.com" target="_blank">Couleur de bas de pied <i class="tip" data-tip-content="Cliquez dessus pour récupérer un code couleur"></i></a></label>
+                                        <input type="text" name="footer_color" value="{{ $setting->footer_color }}" placeholder="Ex: #9B0950" id="footer_color">
+                                        @if ($errors->has('footer_color'))
+                                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('footer_color') }}</strong>
+                                                    </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="form-group{{ $errors->has("image") ? " has-error": "" }}">
                                             <label for="image">Image <strong class="textred">[Taille 500x600]</strong></label>
                                             <div class="input-group">
@@ -214,6 +233,30 @@
                                             </a>
                                         @endif
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group{{ $errors->has("logo") ? " has-error": "" }}">
+                                            <label for="logo">Logo </label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input"
+                                                           id="logo" name="logo"
+                                                           value="{{ $setting->logo }}">
+                                                </div>
+                                            </div>
+                                            @if ($errors->has('logo'))
+                                                <span class="help-block textred">
+                                                        <strong>{{ $errors->first('logo') }}</strong>
+                                                    </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        @if($setting->logo)
+                                            <a href="{{url($setting->logo)}}">
+                                                <img src="{{url($setting->logo)}}" width="100px" height="100px">
+                                            </a>
+                                        @endif
+                                    </div>
                                 </div>
                                 <!-- Row / End -->
                             </div>
@@ -226,3 +269,4 @@
         </div>
     </div>
 @endsection
+

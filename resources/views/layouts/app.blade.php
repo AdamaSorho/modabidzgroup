@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
-    <title>@yield("title", "Bienvenue à Modabidz-group")</title>
+    <title>@yield("title", "Bienvenue à ModabidZ-Group")</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Modabidzgroup" name="keywords">
     <meta content="Modabidzgroup website" name="description">
 
     <!-- Favicon -->
-    <link href="{{ asset("img/favicon.ico") }}" rel="icon">
+{{--    <link href="{{ asset("img/favicon.ico") }}" rel="icon">--}}
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,8 @@
     <link href="{{ asset("lib/owlcarousel/assets/owl.carousel.min.css") }}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset("css/style.css") }}" rel="stylesheet">
+    @include("layouts.settings_style")
+{{--    <link href="{{ asset("css/style.css") }}" rel="stylesheet">--}}
 </head>
 
 <body>

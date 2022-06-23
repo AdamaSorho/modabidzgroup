@@ -11,10 +11,17 @@ class SettingService
         return Setting::first();
     }
 
+    public static function setting()
+    {
+        return Setting::first();
+    }
+
     public function storeSetting($data): void
     {
         $setting = $this->getSetting();
         $upload_dir = 'settings/'.date('Y');
+        $upload_logo = 'settings/logo'.date('Y');
+
         if (is_null($setting))
             $setting = new Setting();
         $setting
@@ -34,7 +41,10 @@ class SettingService
         $setting->location = $data["location"];
         $setting->email = $data["email"];
         $setting->phone = $data["phone"];
+        $setting->header_color = $data["header_color"];
+        $setting->footer_color = $data["footer_color"];
         $setting->image = ($data["image"]) ? 'storage/' . \Storage::disk('public')->putFile($upload_dir, $data["image"]) : (($setting->image) ?: '');
+        $setting->logo = ($data["logo"]) ? 'storage/' . \Storage::disk('public')->putFile($upload_logo, $data["logo"]) : (($setting->logo) ?: '');
 
         $setting->save();
     }

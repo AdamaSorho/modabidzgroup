@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Residence\ClientBookingRequest;
 use App\Services\CarouselService;
 use App\Services\RoomService;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ResidenceController extends Controller
 {
@@ -25,10 +28,12 @@ class ResidenceController extends Controller
     {
         $carousels = $this->carouselService->getCarouselsResidence();
         $rooms = $this->roomService->getRoomsWithPaginator(6);
+        $all_rooms = $this->roomService->getRooms();
 
         return view("residence.welcome", [
             "carousels" => $carousels,
             "rooms" => $rooms,
+            "all_rooms" => $all_rooms,
         ]);
     }
 
@@ -41,5 +46,17 @@ class ResidenceController extends Controller
             "room" => $room,
             "rooms" => $rooms,
         ]);
+    }
+
+    public function storeBooking(ClientBookingRequest $request): RedirectResponse
+    {
+        $response = $this->roomService->storeBooking($request);
+
+        if ($response["error"])
+            Alert::error(__("Erreur"), $response["message"]);
+        else
+            Alert::success(__('Succès'), $response["message"]);
+
+        return redirect()->back();
     }
 }

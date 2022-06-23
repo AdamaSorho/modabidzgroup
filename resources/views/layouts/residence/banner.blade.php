@@ -22,56 +22,90 @@
     <!-- Search Box -->
     <div class="search-box clearfix">
         <div class="search-outer">
-            <h3 class="text-center">Quick Booking</h3>
+            <h3 class="text-center">@lang("Réservation Rapide")</h3>
             <div class="search-content table_item">
-                <form>
+                <form method="post" action="{{ route("residence.room.booking") }}">
+                    @csrf
                     <div class="form-group">
-                        <div class='input-group date' id='datetimepicker1'>
-                            <input type='text' class="form-control" value="Check In" />
-                            <i class="flaticon-calendar"></i>
-                            <span class="input-group-addon">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                </span>
-                        </div>
+                        <input type='text' name="name" class="form-control" placeholder="@lang("Nom")" />
+                        <i class="flaticon-add-user"></i>
+                        @if ($errors->has('name'))
+                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('name') }}</strong>
+                                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <input type='email' required name="email" class="form-control" placeholder="@lang("Email")" />
+                        <i class="flaticon-mail"></i>
+                        @if ($errors->has('email'))
+                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <input type='tel' required name="phone" class="form-control" placeholder="@lang("Téléphone")" />
+                        <i class="flaticon-phone-call"></i>
+                        @if ($errors->has('phone'))
+                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('phone') }}</strong>
+                                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <input type='date' required name="check_in" class="form-control" placeholder="@lang("Arrivée")" />
+                        <i class="flaticon-calendar"></i>
+                        @if ($errors->has('check_in'))
+                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('check_in') }}</strong>
+                                                    </span>
+                        @endif
                     </div>
 
                     <div class="form-group form-icon">
-                        <div class='input-group date' id='datetimepicker2'>
-                            <input type='text' class="form-control" value="Check Out" />
-                            <i class="flaticon-calendar"></i>
-                            <span class="input-group-addon">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                </span>
-                        </div>
+                        <input type='date' required name="check_out" class="form-control" placeholder="@lang("Départ")" />
+                        <i class="flaticon-calendar"></i>
+                        @if ($errors->has('check_out'))
+                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('check_out') }}</strong>
+                                                    </span>
+                        @endif
                     </div>
 
                     <div class="form-group  form-icon">
-                        <select name="custom-select-2" class="selectpicker form-control" tabindex="1">
-                            <option value="0">Guest</option>
-                            <option value="1">0</option>
-                            <option value="2">1</option>
-                            <option value="3">2</option>
-                            <option value="4">3</option>
-                            <option value="5">4</option>
+                        <select name="guest" class="selectpicker form-control" tabindex="1">
+                            <option value="" disabled selected>@lang("Invité")</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                         <i class="flaticon-box"></i>
+                        @if ($errors->has('guest'))
+                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('guest') }}</strong>
+                                                    </span>
+                        @endif
                     </div>
 
                     <div class="form-group  form-icon">
-                        <select name="custom-select-2" class="selectpicker form-control" tabindex="1">
-                            <option value="0">Room</option>
-                            <option value="1">0</option>
-                            <option value="2">1</option>
-                            <option value="3">2</option>
-                            <option value="4">3</option>
-                            <option value="5">4</option>
+                        <select name="room_id" required class="selectpicker form-control" tabindex="1">
+                            <option value="" disabled selected>@lang("Chambre")</option>
+                            @foreach($all_rooms as $element)
+                                <option value="{{ $element->id }}">{{ $element->name }}</option>
+                            @endforeach
                         </select>
                         <i class="flaticon-box"></i>
+                        @if ($errors->has('room_id'))
+                            <span class="help-block textred">
+                                                        <strong>{{ $errors->first('room_id') }}</strong>
+                                                    </span>
+                        @endif
                     </div>
 
-                    <div class="search">
-                        <a href="#" class="btn-red btn-red">CHECK AVAILABILITY</a>
-                    </div>
+                    <button type="submit" class="btn-red btn-red">@lang("RÉSERVER")</button>
+
                 </form>
             </div>
         </div>

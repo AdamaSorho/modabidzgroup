@@ -28,6 +28,18 @@ Route::group(["prefix" => "/residence"], function () {
     Route::get("/", [\App\Http\Controllers\ResidenceController::class, "index"])->name("residence.home");
     Route::group(["prefix" => "/room"], function () {
         Route::get("/detail/{id}", [\App\Http\Controllers\ResidenceController::class, "room_detail"])->name("residence.room.detail");
+        Route::post("/book", [\App\Http\Controllers\ResidenceController::class, "storeBooking"])->name("residence.room.booking");
+    });
+
+    Route::group(["prefix" => "reservation"], function () {
+        Route::get("/list/{id}", [\App\Http\Controllers\Admin\Residence\ReservationController::class, "index"])->name("admin.residence.reservation.index.one");
+        Route::get("/list", [\App\Http\Controllers\Admin\Residence\ReservationController::class, "index"])->name("admin.residence.reservation.index");
+        Route::get("/validate/{id}", [\App\Http\Controllers\Admin\Residence\ReservationController::class, "validateBooking"])->name("admin.residence.reservation.validate");
+        Route::get("/reject/{id}", [\App\Http\Controllers\Admin\Residence\ReservationController::class, "rejectBooking"])->name("admin.residence.reservation.reject");
+        Route::get("/create", [\App\Http\Controllers\Admin\Residence\ReservationController::class, "create"])->name("admin.residence.reservation.create");
+        Route::get("/update/{id}", [\App\Http\Controllers\Admin\Residence\ReservationController::class, "create"])->name("admin.residence.reservation.update");
+        Route::post("/store", [\App\Http\Controllers\Admin\Residence\ReservationController::class, "store"])->name("admin.residence.reservation.store");
+        Route::post("/delete", [\App\Http\Controllers\Admin\Residence\ReservationController::class, "destroy"])->name("admin.residence.reservation.delete");
     });
 });
 
