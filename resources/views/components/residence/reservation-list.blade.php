@@ -52,12 +52,16 @@
                                     <span class="glyphicon glyphicon-plus"></span>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="">
-                                    <a class="dropdown-item" href="{{ route("admin.residence.reservation.validate", $reservation->id) }}">@lang("Valider")</a>
-                                    <a class="dropdown-item" href="{{ route("admin.residence.reservation.reject", $reservation->id) }}">@lang("Annuler")</a>
+                                    <a class="dropdown-item"
+                                       href="{{ route("admin.residence.reservation.validate", $reservation->id) }}"
+                                        onclick="return confirm('Voulez-vous vraiment valider cette réservation ? \n\nPour valider, assurez-vous que le client a déjà effectué le paiement.')">@lang("Valider")</a>
+                                    <a class="dropdown-item"
+                                       href="{{ route("admin.residence.reservation.reject", $reservation->id) }}"
+                                        onclick="return confirm('Voulez-vous vraiment annulez cette réservation ?')">@lang("Annuler")</a>
                                     <a class="dropdown-item" href="{{ route("admin.residence.reservation.update", $reservation->id) }}">@lang("Modifier")</a>
                                     <form method="POST" action="{{ route("admin.residence.reservation.delete", $reservation->id) }}">
                                         @csrf
-                                        <button class="dropdown-item del" onclick="confirm('Voulez vraiment supprimer cet élément ?')">@lang("Supprimer")</button>
+                                        <button class="dropdown-item del" onclick="return confirm('Voulez vraiment supprimer cet élément ?')">@lang("Supprimer")</button>
                                     </form>
                                 </div>
                             </div>

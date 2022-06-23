@@ -31,7 +31,7 @@
                                     <a class="dropdown-item" href="{{ route("admin.residence.room.photo.update", ["room_id" => $room->id, "id" => $photo->id]) }}">@lang("Modifier")</a>
                                     <form method="POST" action="{{ route("admin.residence.room.photo.delete", ["room_id" => $room->id, "photo" => $photo->id]) }}">
                                         @csrf
-                                        <button class="dropdown-item del" onclick="confirm('Voulez vraiment supprimer cet élément ?')">@lang("Supprimer")</button>
+                                        <button class="dropdown-item del" onclick="return confirm('Voulez vraiment supprimer cet élément ?')">@lang("Supprimer")</button>
                                     </form>
                                 </div>
                             </div>

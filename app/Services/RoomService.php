@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Reservation;
 use App\Models\Room;
 use App\Models\RoomPhoto;
+use Illuminate\Support\Facades\Auth;
 
 class RoomService
 {
@@ -99,6 +100,7 @@ class RoomService
     public function validateReservation($id, bool $validate): void
     {
         $booking = $this->getBooking($id);
+        $booking->user_id = Auth::id();
         if ($validate)
             $booking->is_accepted = true;
         else

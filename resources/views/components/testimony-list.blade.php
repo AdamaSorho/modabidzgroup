@@ -27,7 +27,7 @@
                                     <a class="dropdown-item" href="{{ route("admin.testimony.update", $testimony->id) }}">@lang("Modifier")</a>
                                     <form method="POST" action="{{ route("admin.testimony.delete", $testimony->id) }}">
                                         @csrf
-                                        <button class="dropdown-item del" onclick="confirm('Voulez vraiment supprimer cet élément ?')">@lang("Supprimer")</button>
+                                        <button class="dropdown-item del" onclick="return confirm('Voulez vraiment supprimer cet élément ?')">@lang("Supprimer")</button>
                                     </form>
                                 </div>
                             </div>
