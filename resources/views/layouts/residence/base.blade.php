@@ -12,8 +12,8 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset("admin/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css">
     <!--Custom CSS-->
-{{--    @include("layouts.residence.hotel_style")--}}
-    <link href="{{ asset("admin/css/hotel.css") }}" rel="stylesheet" type="text/css">
+    @include("layouts.residence.hotel_style")
+{{--    <link href="{{ asset("admin/css/hotel.css") }}" rel="stylesheet" type="text/css">--}}
     <!--Flaticons CSS-->
     <link href="{{ asset("admin/font/flaticon.css") }}" rel="stylesheet" type="text/css">
     <!--Plugin CSS-->
