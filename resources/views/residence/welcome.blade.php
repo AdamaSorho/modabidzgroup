@@ -17,7 +17,9 @@
         <div class="container">
             <div class="section-title">
                 <h2>@lang("<span>Chambres</span> Populaires")</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .</p>
+                <p>
+                    Des chambres haut standing, des services personnalisés de classe internationale à votre disposition.
+                </p>
             </div>
             <div class="row room-slider slider-button">
                 @foreach($rooms as $room)
@@ -32,7 +34,6 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </section>
