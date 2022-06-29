@@ -29,7 +29,6 @@
                             <div class="package-content">
                                 <h5>@lang("À partir :") <span>{{ $room->amount }} F CFA</span> / @lang("JOUR") </h5>
                                 <h3><a href="{{ route("residence.room.detail", $room->id) }}">{{ $room->name }}</a></h3>
-                                <p>{!! \Illuminate\Support\Str::limit($room->description) !!}</p>
                             </div>
                         </div>
                     </div>
