@@ -24,8 +24,8 @@ class VideoRequest extends FormRequest
     public function rules()
     {
         return [
-            "title_fr" => "required|string|max:155",
-            "title_en" => "required|string|max:155",
+            "title_fr" => "nullable|string|max:155",
+            "title_en" => "nullable|string|max:155",
             "frame" => "required",
             "video_category_id" => "required|exists:video_categories,id",
         ];
