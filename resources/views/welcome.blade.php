@@ -281,7 +281,7 @@
                             <div class="shadow mb-4">
                                 <div class="position-relative">
                                     <img class="img-fluid w-100" src="{{ url($recent->image) }}" alt="">
-                                    <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
+                                    <a href="{{ route("blog.detail", $recent->id) }}" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
                                         <h4 class="text-center text-white font-weight-medium mb-3">{{ $recent->title }}</h4>
                                         <div class="d-flex text-light">
                                             <small class="mr-2"><i class="fa fa-user text-secondary"></i> {{ $recent->user->name }}</small>
