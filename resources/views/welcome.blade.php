@@ -50,7 +50,7 @@
         <div class="container pt-0 pt-lg-4">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid" src="{{ $setting->image ? url($setting->image) : asset("img/about.jpg") }}" alt="">
+                    <img class="img-fluid" src="{{ $setting ? url($setting->image) : asset("img/about.jpg") }}" alt="">
                 </div>
                 <div class="col-lg-7 mt-5 mt-lg-0 pl-lg-5">
                     <h6 class="text-secondary text-uppercase font-weight-medium mb-3">@lang("À propos de nous")</h6>
