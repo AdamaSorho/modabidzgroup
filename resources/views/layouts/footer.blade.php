@@ -7,7 +7,7 @@
         <div class="col-lg-3 col-md-6 mb-5">
             <a href=""><h2 class="text-secondary mb-3"><span class="text-white">MODABIDZ</span>GROUP</h2></a>
             <p>
-                @if($setting->about_us)
+                @if($setting)
                     {{ \Illuminate\Support\Str::limit($setting->about_us, 250) ?? '' }}
                 @endif
             </p>
