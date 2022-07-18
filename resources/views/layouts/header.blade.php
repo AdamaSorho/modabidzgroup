@@ -47,7 +47,7 @@
     <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 pl-3 pl-lg-5">
             <a href="{{ route("home") }}" class="navbar-brand">
-                <img src="{{ $setting->logo ? url($setting->logo) : asset("img/modabidz-logo.jpeg") }}" width="250" alt="ModabidZ Group">
+                <img src="{{ $setting ? url($setting->logo) : asset("img/modabidz-logo.jpeg") }}" width="250" alt="ModabidZ Group">
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
